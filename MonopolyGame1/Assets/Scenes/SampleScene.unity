@@ -834,7 +834,7 @@ MonoBehaviour:
   min: 5
   max: 10
   playerStone: {fileID: 1436160955}
-  stepsRandom: 0
+  stepsRandom: 2
 --- !u!4 &350440352
 Transform:
   m_ObjectHideFlags: 0
@@ -1419,6 +1419,7 @@ GameObject:
   - component: {fileID: 630504355}
   - component: {fileID: 630504354}
   - component: {fileID: 630504353}
+  - component: {fileID: 630504356}
   m_Layer: 0
   m_Name: node (5)
   m_TagString: Untagged
@@ -1434,7 +1435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630504351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.91}
+  m_LocalPosition: {x: 1.38, y: 0, z: -11.91}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_Children: []
   m_Father: {fileID: 936125188}
@@ -1500,6 +1501,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630504351}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &630504356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630504351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cf6dfc14a11ea4b85398ba866e723e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStepsEffect: 0
+  isContinueMove: 1
+  stepsContinueMove: -1
+  stepsEffectValue: 0
 --- !u!1 &693311771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2761,7 @@ GameObject:
   - component: {fileID: 1436160954}
   - component: {fileID: 1436160955}
   - component: {fileID: 1436160956}
+  - component: {fileID: 1436160957}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -2793,8 +2811,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c43448fc0202074683dfb7ba21a944a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusStone: {fileID: 1436160957}
   detector: {fileID: 209010345}
   length: 1.2
+--- !u!114 &1436160957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436160953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1240cfc96f0482948a13589c40b9c8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stone: {fileID: 1436160955}
+  stepsEffect: 0
 --- !u!1 &1455724553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +3770,7 @@ GameObject:
   - component: {fileID: 1847569891}
   - component: {fileID: 1847569890}
   - component: {fileID: 1847569889}
+  - component: {fileID: 1847569892}
   m_Layer: 0
   m_Name: node (2)
   m_TagString: Untagged
@@ -3752,7 +3786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847569887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.79}
+  m_LocalPosition: {x: -1.29, y: 0, z: -4.79}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_Children: []
   m_Father: {fileID: 936125188}
@@ -3818,6 +3852,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847569887}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1847569892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847569887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cf6dfc14a11ea4b85398ba866e723e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStepsEffect: 0
+  isContinueMove: 1
+  stepsContinueMove: 2
+  stepsEffectValue: 0
 --- !u!1 &1858813503
 GameObject:
   m_ObjectHideFlags: 0

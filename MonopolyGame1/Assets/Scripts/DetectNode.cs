@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectNode : MonoBehaviour
 {
+    public StatusStone statusStone;
     public Transform detector;
     public float length;
 
@@ -20,6 +21,11 @@ public class DetectNode : MonoBehaviour
         if (Physics.Raycast(detector.position, detector.TransformDirection(Vector3.down), out hit, length))
         {
             Debug.Log("hit : " + hit.collider.gameObject.name);
+            if (hit.collider.gameObject.GetComponent<NodeProperties>() != null)
+            {
+                NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
+                nodeProperties.CheckPropertiesNode(statusStone);
+            }
         }
     }
 

@@ -8,7 +8,7 @@ public class Stone : MonoBehaviour
     private int routePosition;
     private int steps;
     private bool isMoving;
-
+    public DetectNode detectNode;
     public void MoveSteps(int _steps)
     {
         steps = _steps;
@@ -21,6 +21,7 @@ public class Stone : MonoBehaviour
             yield break;
         }
         isMoving = true;
+
         while (steps > 0)
         {
             routePosition++;
@@ -35,9 +36,25 @@ public class Stone : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
             steps--;
+        }
+        while (steps < 0)
+        {
+            routePosition--;
+            routePosition %= currentRoute.childNodeLists.Count;
+
+            Vector3 nextPos = currentRoute.childNodeLists[routePosition].position;
             transform.LookAt(nextPos);
+            while (MoveToNextNode(nextPos))
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(0.1f);
+            steps++;
         }
         isMoving = false;
+        transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
+        detectNode.Detect();
 
 
     }
