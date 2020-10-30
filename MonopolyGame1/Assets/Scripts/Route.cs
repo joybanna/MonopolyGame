@@ -31,7 +31,10 @@ public class Route : MonoBehaviour
         {
             if (child != this.transform)
             {
-                childNodeLists.Add(child);
+                if (child.GetComponent<NodeMember>() != null)
+                {
+                    childNodeLists.Add(child);
+                }
             }
         }
     }

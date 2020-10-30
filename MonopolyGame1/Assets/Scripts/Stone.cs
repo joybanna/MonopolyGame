@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stone : MonoBehaviour
 {
+    public NodeMember nodeStay;
     public Route currentRoute;
     private int routePosition;
     private int steps;
@@ -20,8 +21,10 @@ public class Stone : MonoBehaviour
         {
             yield break;
         }
-        isMoving = true;
 
+
+        isMoving = true;
+        detectNode.Detect(false);
         Vector3 nextPos = new Vector3();
 
         while (steps > 0)
@@ -74,13 +77,13 @@ public class Stone : MonoBehaviour
         }
 
         isMoving = false;
-        detectNode.Detect();
+        detectNode.Detect(true);
 
     }
 
-    private bool MoveToNextNode(Vector3 goal)
+    private bool MoveToNextNode(Vector3 _goal)
     {
-        return goal != (transform.position = Vector3.MoveTowards(transform.position, goal, 8f * Time.deltaTime));
+        return _goal != (transform.position = Vector3.MoveTowards(transform.position, _goal, 8f * Time.deltaTime));
     }
 
 }

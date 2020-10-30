@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RandomSteps : MonoBehaviour
 {
+    public int no_player;
     public int min, max;
-    public Stone playerStone;
+    public Stone[] playerStone;
     [SerializeField] private int stepsRandom;
 
     private void Update()
@@ -16,7 +17,7 @@ public class RandomSteps : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            playerStone.MoveSteps(stepsRandom);
+            playerStone[no_player].MoveSteps(stepsRandom);
         }
     }
 

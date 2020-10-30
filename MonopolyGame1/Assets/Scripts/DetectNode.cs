@@ -15,18 +15,35 @@ public class DetectNode : MonoBehaviour
         Gizmos.DrawLine(detector.position, new Vector3(detector.position.x, detector.position.y - length, detector.position.z));
 
     }
-    public void Detect()
+    public void Detect(bool isRegister)
     {
         RaycastHit hit;
         if (Physics.Raycast(detector.position, detector.TransformDirection(Vector3.down), out hit, length))
         {
             //Debug.Log("hit : " + hit.collider.gameObject.name);
-            if (hit.collider.gameObject.GetComponent<NodeProperties>() != null)
+
+            if (hit.collider.gameObject.GetComponent<NodeMember>() != null)
             {
-                NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
-                nodeProperties.CheckPropertiesNode(statusStone);
+                NodeMember nodeMember = hit.collider.gameObject.GetComponent<NodeMember>();
+
+                if (isRegister)
+                {
+                    if (hit.collider.gameObject.GetComponent<NodeProperties>() != null)
+                    {
+                        NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
+                        nodeProperties.CheckPropertiesNode(statusStone);
+                    }
+                    nodeMember.Register(statusStone.stone);
+                }
+                else
+                {
+                    nodeMember.Unregister(statusStone.stone);
+                }
+
             }
         }
     }
+
+
 
 }
