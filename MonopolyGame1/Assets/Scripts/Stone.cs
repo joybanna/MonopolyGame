@@ -22,12 +22,14 @@ public class Stone : MonoBehaviour
         }
         isMoving = true;
 
+        Vector3 nextPos = new Vector3();
+
         while (steps > 0)
         {
             routePosition++;
             routePosition %= currentRoute.childNodeLists.Count;
 
-            Vector3 nextPos = currentRoute.childNodeLists[routePosition].position;
+            nextPos = currentRoute.childNodeLists[routePosition].position;
             transform.LookAt(nextPos);
             while (MoveToNextNode(nextPos))
             {
@@ -36,13 +38,21 @@ public class Stone : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
             steps--;
+
         }
         while (steps < 0)
         {
             routePosition--;
             routePosition %= currentRoute.childNodeLists.Count;
+            if (routePosition < 0)
+            {
+                nextPos = currentRoute.childNodeLists[currentRoute.childNodeLists.Count + routePosition].position;
+            }
+            else
+            {
+                nextPos = currentRoute.childNodeLists[routePosition].position;
+            }
 
-            Vector3 nextPos = currentRoute.childNodeLists[routePosition].position;
             transform.LookAt(nextPos);
             while (MoveToNextNode(nextPos))
             {
@@ -52,10 +62,19 @@ public class Stone : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             steps++;
         }
-        isMoving = false;
-        transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
-        detectNode.Detect();
 
+        if (routePosition < 0)
+        {
+            transform.LookAt(currentRoute.childNodeLists[(currentRoute.childNodeLists.Count + routePosition + 1)].position);
+            routePosition = currentRoute.childNodeLists.Count + routePosition;
+        }
+        else
+        {
+            transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
+        }
+
+        isMoving = false;
+        detectNode.Detect();
 
     }
 

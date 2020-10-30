@@ -20,7 +20,7 @@ public class DetectNode : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(detector.position, detector.TransformDirection(Vector3.down), out hit, length))
         {
-            Debug.Log("hit : " + hit.collider.gameObject.name);
+            //Debug.Log("hit : " + hit.collider.gameObject.name);
             if (hit.collider.gameObject.GetComponent<NodeProperties>() != null)
             {
                 NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
