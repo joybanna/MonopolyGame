@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stone : MonoBehaviour
 {
+    public int subNodeStay;
     public NodeMember nodeStay;
     public Route currentRoute;
     private int routePosition;
@@ -73,12 +74,20 @@ public class Stone : MonoBehaviour
         }
         else
         {
-            transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
+            if ((routePosition + 1) < currentRoute.childNodeLists.Count)
+            {
+                transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
+            }
+
         }
 
         isMoving = false;
         detectNode.Detect(true);
 
+    }
+    public void MoveStaySubNode(Vector3 _point)
+    {
+        transform.position = new Vector3(_point.x, transform.position.y, _point.z);
     }
 
     private bool MoveToNextNode(Vector3 _goal)

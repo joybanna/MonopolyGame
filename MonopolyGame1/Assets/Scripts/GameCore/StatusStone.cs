@@ -10,6 +10,12 @@ public class StatusStone : MonoBehaviour
     public void MoveStone(int _steps)
     {
         Debug.Log("StatusStone-MoveStone : " + _steps);
+        StartCoroutine(DelayMove(_steps));
+    }
+
+    IEnumerator DelayMove(int _steps)
+    {
+        yield return new WaitForSeconds(0.5f);
         stone.MoveSteps(_steps);
     }
 }
