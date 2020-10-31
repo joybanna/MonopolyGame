@@ -5,20 +5,12 @@ using UnityEngine;
 public class RandomSteps : MonoBehaviour
 {
     public int no_player;
-    public int min, max;
     public Stone[] playerStone;
-    [SerializeField] private int stepsRandom;
+    public int stepsRandom;
 
-    private void Update()
+    public void MoveStone()
     {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            stepsRandom = Random.Range(min, max);
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            playerStone[no_player].MoveSteps(stepsRandom);
-        }
+        playerStone[no_player].MoveSteps(stepsRandom);
     }
 
 }
