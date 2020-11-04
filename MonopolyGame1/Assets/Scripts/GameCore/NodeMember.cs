@@ -8,7 +8,7 @@ public class NodeMember : MonoBehaviour
     public List<Stone> stones = new List<Stone>(4);
     private bool[] isStays = new bool[4];
 
-    private void Start()
+    private void Awake()
     {
         all_Positions = new List<Transform>();
 
