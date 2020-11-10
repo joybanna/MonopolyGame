@@ -5,19 +5,15 @@ using UnityEngine;
 public class SpawnController : MonoBehaviour
 {
     public List<Stone> stones_players;
-    public List<DataPlayer> dataPlayers;
+
     public Route route;
-    private void Start()
+
+    public void StartSpawnController()
     {
         for (int i = 0; i < stones_players.Count; i++)
         {
             SetStone(i);
         }
-
-    }
-    void CreateDataPlayer()
-    {
-
     }
     void SetStone(int _no)
     {

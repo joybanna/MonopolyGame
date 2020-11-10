@@ -59,6 +59,7 @@ public class RoomController : MonoBehaviourPunCallbacks
     {
 
         Debug.Log("play");
+        PhotonNetwork.LoadLevel(1);
     }
 
 }

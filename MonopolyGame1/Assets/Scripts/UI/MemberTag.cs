@@ -13,6 +13,6 @@ public class MemberTag : MonoBehaviourPunCallbacks
     public void SetMemberTag()
     {
         nameplayer_str = player_network.NickName;
-        nameplayer.text = player_network.NickName;
+        nameplayer.text = player_network.NickName + " : " + (TypeCharacter)player_network.CustomProperties["TypeCharacter"] + " character";
     }
 }

@@ -11,6 +11,11 @@ public class Stone : MonoBehaviour
     private int steps;
     private bool isMoving;
     public DetectNode detectNode;
+
+    private void Start()
+    {
+        currentRoute = GameObject.FindObjectOfType<Route>();
+    }
     public void MoveSteps(int _steps)
     {
         steps = _steps;
