@@ -54,6 +54,8 @@ public class LobbyController : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LocalPlayer.NickName = name_inp.text;
         playerCustomProperties["TypeCharacter"] = (TypeCharacter)typeChar_drop.value;
+        playerCustomProperties["isSpawned"] = false;
+        playerCustomProperties["photonView_id"] = 0000;
         PhotonNetwork.LocalPlayer.CustomProperties = playerCustomProperties;
 
     }

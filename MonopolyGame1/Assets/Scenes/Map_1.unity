@@ -219,8 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 7
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &112621408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -326,8 +329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 9
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &126868755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -760,8 +766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 11
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &227488919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -899,7 +908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &269315258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,7 +999,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269315257}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb493e1e98d4eb94481fe98e3e1c46bf, type: 3}
   m_Name: 
@@ -1163,8 +1172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 8
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &277360544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1390,8 +1402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 15
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &339582062
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1869,8 +1884,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 10
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &553332833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2548,6 +2566,24 @@ MonoBehaviour:
   - {fileID: 1531515829}
   - {fileID: 339582060}
   - {fileID: 1324189458}
+  nodeMemberList:
+  - {fileID: 2023168252}
+  - {fileID: 898950555}
+  - {fileID: 790898081}
+  - {fileID: 1894681618}
+  - {fileID: 732700191}
+  - {fileID: 1874056740}
+  - {fileID: 890531377}
+  - {fileID: 112621407}
+  - {fileID: 277360543}
+  - {fileID: 126868754}
+  - {fileID: 553332832}
+  - {fileID: 227488918}
+  - {fileID: 1083809605}
+  - {fileID: 1829809253}
+  - {fileID: 1531515830}
+  - {fileID: 339582061}
+  - {fileID: 1324189459}
 --- !u!1 &714470396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2731,7 +2767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &728473708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2892,8 +2928,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 4
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &732700192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3030,8 +3069,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 2
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &790898082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3552,8 +3594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 6
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &890531378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3659,8 +3704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 1
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &898950556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4167,8 +4215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 12
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1083809606
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5083,8 +5134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 16
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1324189460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5721,8 +5775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 14
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1531515831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6718,8 +6775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 13
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1829809254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6855,8 +6915,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 5
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1874056741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7058,8 +7121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 3
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &1894681619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7426,8 +7492,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3ea6279834b2948a0dacf1b94a8e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexNode: 0
   all_Positions: []
   stones: []
+  isStays: 00000000
+  rPCController: {fileID: 0}
 --- !u!65 &2023168253
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7775,9 +7844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   no_player: 0
-  playerStone:
-  - {fileID: 0}
-  - {fileID: 0}
+  stone: {fileID: 0}
   stepsRandom: 1
 --- !u!1 &3911612861559772925
 GameObject:
@@ -7791,6 +7858,8 @@ GameObject:
   - component: {fileID: 3911612861559772924}
   - component: {fileID: 3911612861559772926}
   - component: {fileID: 3911612861559772927}
+  - component: {fileID: 3911612861559772929}
+  - component: {fileID: 3911612861559772928}
   m_Layer: 0
   m_Name: RandomSteps
   m_TagString: Untagged
@@ -7827,3 +7896,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnController: {fileID: 3911612861559772926}
+  rPCController: {fileID: 3911612861559772929}
+--- !u!114 &3911612861559772928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911612861559772925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents: []
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &3911612861559772929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911612861559772925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4339f26723764f82977b782312656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView_player: {fileID: 0}
+  photonView_client: {fileID: 3911612861559772928}
+  masterClientSettingController: {fileID: 3911612861559772927}
+  randomSteps: {fileID: 3911612861559772924}
+  route: {fileID: 689852541}

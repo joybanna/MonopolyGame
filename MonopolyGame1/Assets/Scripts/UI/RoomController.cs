@@ -16,6 +16,7 @@ public class RoomController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
         back_btn.onClick.AddListener(() => Onclick_back());
         play_btn.onClick.AddListener(() => Onclick_play());
     }
@@ -27,7 +28,7 @@ public class RoomController : MonoBehaviourPunCallbacks
 
             if (currentMember != PhotonNetwork.PlayerList.Length)
             {
-                Debug.Log("PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length);
+                // Debug.Log("PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length);
                 currentMember = PhotonNetwork.PlayerList.Length;
                 createMember.ClearTag();
                 CheckMember();

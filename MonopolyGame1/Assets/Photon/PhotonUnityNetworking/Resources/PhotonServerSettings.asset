@@ -38,6 +38,13 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - RPC_SpawnStone
+  - RPC_ChangeModel
+  - RPC_CheckAllPlayerSpawned
+  - RPC_SentReadyToMaster
+  - WoldDebug
+  - RPC_RegisterNode
+  - RPC_UnregisterNode
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -5,12 +5,14 @@ using UnityEngine;
 public class RandomSteps : MonoBehaviour
 {
     public int no_player;
-    public Stone[] playerStone;
+    //public Stone[] playerStone;
+    public Stone stone;
     public int stepsRandom;
 
     public void MoveStone()
     {
-        playerStone[no_player].MoveSteps(stepsRandom);
+        //playerStone[no_player].MoveSteps(stepsRandom);
+        stone.MoveSteps(stepsRandom);
     }
 
 }

@@ -12,10 +12,6 @@ public class Stone : MonoBehaviour
     private bool isMoving;
     public DetectNode detectNode;
 
-    private void Start()
-    {
-        currentRoute = GameObject.FindObjectOfType<Route>();
-    }
     public void MoveSteps(int _steps)
     {
         steps = _steps;
@@ -30,16 +26,16 @@ public class Stone : MonoBehaviour
 
 
         isMoving = true;
-        detectNode.Detect(false);
+        detectNode.Detect(false);//unregister node
         Vector3 nextPos = new Vector3();
 
-        while (steps > 0)
+        while (steps > 0)//move foward
         {
             routePosition++;
             routePosition %= currentRoute.childNodeLists.Count;
 
             nextPos = currentRoute.childNodeLists[routePosition].position;
-            transform.LookAt(nextPos);
+            transform.LookAt(LokAtPosition(nextPos));
             while (MoveToNextNode(nextPos))
             {
                 yield return null;
@@ -49,7 +45,7 @@ public class Stone : MonoBehaviour
             steps--;
 
         }
-        while (steps < 0)
+        while (steps < 0)//move backfoward
         {
             routePosition--;
             routePosition %= currentRoute.childNodeLists.Count;
@@ -62,7 +58,7 @@ public class Stone : MonoBehaviour
                 nextPos = currentRoute.childNodeLists[routePosition].position;
             }
 
-            transform.LookAt(nextPos);
+            transform.LookAt(LokAtPosition(nextPos));
             while (MoveToNextNode(nextPos))
             {
                 yield return null;
@@ -74,22 +70,23 @@ public class Stone : MonoBehaviour
 
         if (routePosition < 0)
         {
-            transform.LookAt(currentRoute.childNodeLists[(currentRoute.childNodeLists.Count + routePosition + 1)].position);
+            transform.LookAt(LokAtPosition(currentRoute.childNodeLists[(currentRoute.childNodeLists.Count + routePosition + 1)].position));
             routePosition = currentRoute.childNodeLists.Count + routePosition;
         }
         else
         {
             if ((routePosition + 1) < currentRoute.childNodeLists.Count)
             {
-                transform.LookAt(currentRoute.childNodeLists[routePosition + 1].position);
+                transform.LookAt(LokAtPosition(currentRoute.childNodeLists[routePosition + 1].position));
             }
 
         }
 
         isMoving = false;
-        detectNode.Detect(true);
+        detectNode.Detect(true);//register node
 
     }
+
     public void MoveStaySubNode(Vector3 _point)
     {
         transform.position = new Vector3(_point.x, transform.position.y, _point.z);
@@ -98,6 +95,11 @@ public class Stone : MonoBehaviour
     private bool MoveToNextNode(Vector3 _goal)
     {
         return _goal != (transform.position = Vector3.MoveTowards(transform.position, _goal, 8f * Time.deltaTime));
+    }
+
+    private Vector3 LokAtPosition(Vector3 _pos)
+    {
+        return new Vector3(_pos.x, this.transform.position.y, _pos.z);
     }
 
 }
