@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 7825774288835727748}
   - component: {fileID: 7570700871046692556}
   - component: {fileID: 114788208595023334}
+  - component: {fileID: 114419321166609046}
   m_Layer: 0
   m_Name: stoneplayer_prefab_slow
   m_TagString: Untagged
@@ -240,6 +241,7 @@ MonoBehaviour:
   nodeStay: {fileID: 0}
   currentRoute: {fileID: 0}
   detectNode: {fileID: 7825774288835727774}
+  speedMove: 0.1
 --- !u!114 &7825774288835727774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +306,8 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 114788208595023334}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -323,6 +326,18 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &114419321166609046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825774288835727771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94113475f51a2e24ab29570ea566c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8582510721749519204
 GameObject:
   m_ObjectHideFlags: 0

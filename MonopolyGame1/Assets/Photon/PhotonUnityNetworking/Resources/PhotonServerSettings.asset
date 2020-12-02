@@ -45,6 +45,12 @@ MonoBehaviour:
   - WoldDebug
   - RPC_RegisterNode
   - RPC_UnregisterNode
+  - RPC_CheckOrderPlayer
+  - RPC_SendSpawnPlayer
+  - RPC_SetPositionStart
+  - RPC_CreateOrderplayerTagUI
+  - RPC_SendReadyToMaster
+  - RPC_SendTurn
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

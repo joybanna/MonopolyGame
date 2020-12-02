@@ -11,6 +11,7 @@ public class Stone : MonoBehaviour
     private int steps;
     private bool isMoving;
     public DetectNode detectNode;
+    public float speedMove = 0.1f;
 
     public void MoveSteps(int _steps)
     {
@@ -41,7 +42,7 @@ public class Stone : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(speedMove);
             steps--;
 
         }
@@ -64,7 +65,7 @@ public class Stone : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(speedMove);
             steps++;
         }
 

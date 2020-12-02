@@ -6,7 +6,7 @@ public class NodeMember : MonoBehaviour
 {
     public int indexNode;
     public List<Transform> all_Positions;
-    public List<Stone> stones = new List<Stone>(4);
+    //public List<Stone> stones = new List<Stone>(4);
     public bool[] isStays = new bool[4];
 
     public RPCController rPCController;
@@ -34,7 +34,7 @@ public class NodeMember : MonoBehaviour
 
     public void Register(Stone _stone)
     {
-        stones.Add(_stone);
+        //stones.Add(_stone);
         _stone.nodeStay = this;
 
         _stone.subNodeStay = PositionOpen();
@@ -48,7 +48,7 @@ public class NodeMember : MonoBehaviour
     }
     public void Unregister(Stone _stone)
     {
-        stones.Remove(_stone);
+        //stones.Remove(_stone);
         _stone.nodeStay = null;
         isStays[_stone.subNodeStay] = false;
 
@@ -61,8 +61,12 @@ public class NodeMember : MonoBehaviour
         {
             if (isStays[i] == false)
             {
-                Debug.Log("return point : " + i);
+                Debug.Log("PositionOpen point : " + i);
                 return i;
+            }
+            else
+            {
+                Debug.Log("PositionOpen point : " + i + " close");
             }
         }
         Debug.LogWarning("member more 4 !!!");

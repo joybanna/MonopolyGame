@@ -56,7 +56,12 @@ public class LobbyController : MonoBehaviourPunCallbacks
         playerCustomProperties["TypeCharacter"] = (TypeCharacter)typeChar_drop.value;
         playerCustomProperties["isSpawned"] = false;
         playerCustomProperties["photonView_id"] = 0000;
+        playerCustomProperties["playerName"] = PhotonNetwork.LocalPlayer.NickName;
+        playerCustomProperties["playerOrder"] = 0;
+        playerCustomProperties["isWin"] = false;
+        playerCustomProperties["statusPlayer"] = "inRoom";
         PhotonNetwork.LocalPlayer.CustomProperties = playerCustomProperties;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
 
     }
     private RoomOptions RoomSetting()

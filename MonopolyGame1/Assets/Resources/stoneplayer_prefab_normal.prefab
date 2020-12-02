@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 5123261512398112891}
   - component: {fileID: 4797265061244675891}
   - component: {fileID: 114509072717342952}
+  - component: {fileID: 114375586613554786}
   m_Layer: 0
   m_Name: stoneplayer_prefab_normal
   m_TagString: Untagged
@@ -210,6 +211,7 @@ MonoBehaviour:
   nodeStay: {fileID: 0}
   currentRoute: {fileID: 0}
   detectNode: {fileID: 5123261512398112865}
+  speedMove: 0.1
 --- !u!114 &5123261512398112865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +295,18 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &114375586613554786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123261512398112868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94113475f51a2e24ab29570ea566c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5123261513574163829
 GameObject:
   m_ObjectHideFlags: 0

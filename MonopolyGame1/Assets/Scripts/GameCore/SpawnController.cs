@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    public List<Stone> stones_players;
+    //public List<Stone> stones_players;
 
     public Route route;
 
-    public void StartSpawnController()
+    /*public void StartSpawnController()
     {
         for (int i = 0; i < stones_players.Count; i++)
         {
@@ -19,5 +19,5 @@ public class SpawnController : MonoBehaviour
     {
         stones_players[_no].transform.position = route.childNodeLists[0].position;
         stones_players[_no].detectNode.Detect(true);
-    }
+    }*/
 }
