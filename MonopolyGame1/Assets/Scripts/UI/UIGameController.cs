@@ -6,16 +6,17 @@ using Photon.Realtime;
 
 public class UIGameController : MonoBehaviourPunCallbacks
 {
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     public Transform positionPlayerOrder;
     public Transform positionRollNumber;
     public PlayerOrderTag playerOrderTag_prefab;
     public List<PlayerOrderTag> playerOrderTagList;
+    public UITestGameCore uITestGameCore;
 
     public void SettingStart()
     {
         positionRollNumber.gameObject.SetActive(false);
         playerOrderTagList = new List<PlayerOrderTag>();
-
     }
     public void FillterCreateOrderPlayer(string _name, string _order)
     {
@@ -43,6 +44,12 @@ public class UIGameController : MonoBehaviourPunCallbacks
             }
         }
     }
+    public void OpenRollController(bool isOpen)
+    {
+        positionRollNumber.gameObject.SetActive(isOpen);
+        uITestGameCore.random_btn.gameObject.SetActive(true);
+    }
+
 
 
 }

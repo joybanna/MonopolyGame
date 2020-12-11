@@ -6,19 +6,17 @@ using Photon.Realtime;
 
 public class CheckReady : MonoBehaviourPunCallbacks
 {
-    private ExitGames.Client.Photon.Hashtable playerCustomProperties;
-    public MasterClientSettingController masterClientSettingController;
-    public RPCController rPCController;
+    public GameControllerCenter gameControllerCenter;
+    private RPCController rPCController;
 
-    private void Start()
+    public void SettingStart()//start
     {
-        playerCustomProperties = PhotonNetwork.LocalPlayer.CustomProperties;
+        this.enabled = false;
         PhotonNetwork.AutomaticallySyncScene = true;
-        masterClientSettingController = FindObjectOfType<MasterClientSettingController>();
-        rPCController = FindObjectOfType<RPCController>();
-        masterClientSettingController.SettingStart();
-        playerCustomProperties["statusPlayer"] = "isLoad";
-        PhotonNetwork.LocalPlayer.SetCustomProperties(playerCustomProperties);
+        rPCController = gameControllerCenter.rPCController;
+
+        PhotonNetwork.LocalPlayer.CustomProperties["statusPlayer"] = "isLoad";
+        PhotonNetwork.LocalPlayer.SetCustomProperties(PhotonNetwork.LocalPlayer.CustomProperties);
     }
     private void Update()
     {

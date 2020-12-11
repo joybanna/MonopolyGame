@@ -51,6 +51,8 @@ MonoBehaviour:
   - RPC_CreateOrderplayerTagUI
   - RPC_SendReadyToMaster
   - RPC_SendTurn
+  - RPC_SendTurnRunToMaster
+  - RPC_SettingNodeProp
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

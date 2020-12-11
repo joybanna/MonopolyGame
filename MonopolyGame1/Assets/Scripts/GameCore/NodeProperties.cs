@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class NodeProperties : MonoBehaviour
 {
-    [SerializeField] private bool isStepsEffect = false;
-    [SerializeField] private bool isContinueMove = false;
+    public bool isStepsEffect = false;
+    public bool isContinueMove = false;
 
-    [SerializeField] private int stepsContinueMove = 0;
-    [SerializeField] private int stepsEffectValue = 0;
+    public int stepsContinueMove = 0;
+    public int stepsEffectValue = 0;
+    private MeshRenderer modelBlock;
+    private Material m_blue, m_red;
+    public void SettingStart()
+    {
+        m_blue = (Material)Resources.Load("m_blue");
+        m_red = (Material)Resources.Load("m_red");
 
+        if (GetComponentInChildren<MeshRenderer>() != null && GetComponentInChildren<MeshRenderer>().name == "model")
+        {
+            modelBlock = GetComponentInChildren<MeshRenderer>();
+        }
+    }
     public void CheckPropertiesNode(StatusStone _statusStone)
     {
         if (isStepsEffect)
@@ -26,6 +37,21 @@ public class NodeProperties : MonoBehaviour
         {
             return;
         }
+    }
+    public void ChangeColorBlock(string _color)
+    {
+        switch (_color)
+        {
+            case "blue":
+                modelBlock.material = m_blue;
+                break;
+            case "red":
+                modelBlock.material = m_red;
+                break;
+            default: break;
+        }
+
+
     }
 
 }

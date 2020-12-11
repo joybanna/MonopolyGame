@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc88d1e5eedf8714ea8952bbf5a5a3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeCharacter: 0
   subNodeStay: 0
   nodeStay: {fileID: 0}
   currentRoute: {fileID: 0}

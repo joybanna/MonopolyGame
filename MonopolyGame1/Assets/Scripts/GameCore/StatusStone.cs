@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StatusStone : MonoBehaviour
 {
+    public bool isWin;
     public Stone stone;
     public int stepsEffect;
 

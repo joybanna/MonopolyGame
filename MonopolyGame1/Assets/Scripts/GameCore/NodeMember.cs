@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class NodeMember : MonoBehaviour
 {
+    public bool isFinish;
     public int indexNode;
     public List<Transform> all_Positions;
-    //public List<Stone> stones = new List<Stone>(4);
     public bool[] isStays = new bool[4];
-
-    public RPCController rPCController;
-    private void Awake()
+    private RPCController rPCController;
+    public void SettingNodeMember(Route _route)
     {
-        rPCController = GameObject.FindObjectOfType<RPCController>();
+        rPCController = _route.gameControllerCenter.rPCController;
         all_Positions = new List<Transform>();
 
         Transform[] temp = new Transform[5];
@@ -40,8 +39,8 @@ public class NodeMember : MonoBehaviour
         _stone.subNodeStay = PositionOpen();
         isStays[_stone.subNodeStay] = true;
 
-        rPCController.RegisterNode(ExportNumCode(indexNode, _stone.subNodeStay));
-
+        rPCController.RegisterNode(ExportCode(indexNode, _stone.subNodeStay));
+        rPCController.SendReadyToMaster();
         _stone.MoveStaySubNode(all_Positions[_stone.subNodeStay].position);
 
 
@@ -52,7 +51,7 @@ public class NodeMember : MonoBehaviour
         _stone.nodeStay = null;
         isStays[_stone.subNodeStay] = false;
 
-        rPCController.UnregisterNode(ExportNumCode(indexNode, _stone.subNodeStay));
+        rPCController.UnregisterNode(ExportCode(indexNode, _stone.subNodeStay));
     }
 
     private int PositionOpen()
@@ -61,21 +60,22 @@ public class NodeMember : MonoBehaviour
         {
             if (isStays[i] == false)
             {
-                Debug.Log("PositionOpen point : " + i);
+                //Debug.Log("PositionOpen point : " + i);
                 return i;
             }
             else
             {
-                Debug.Log("PositionOpen point : " + i + " close");
+                //Debug.Log("PositionOpen point : " + i + " close");
             }
         }
         Debug.LogWarning("member more 4 !!!");
         return 0;
     }
 
-    private int ExportNumCode(int _node, int _subnode)
+    private string ExportCode(int _node, int _subnode)
     {
-        int temp = (_node * 1000) + _subnode;
+        string temp = _node.ToString() + "|" + _subnode.ToString();
         return temp;
     }
+
 }

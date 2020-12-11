@@ -6,26 +6,19 @@ using Photon.Realtime;
 public class MasterClientSettingController : MonoBehaviourPunCallbacks
 {
     //public SpawnController spawnController;
-    public RPCController rPCController;
-    public UIGameController uIGameController;
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     private OrderPlayerSystem orderPlayerSystem;
     private List<Player> playersOrdered;
     private List<int> orderValue;
     private bool isWorked = false;
-    private TurnManagement turnManagement;
+    private bool isSet = false;
 
-    public void SettingStart()
+    public IEnumerator MasterWork()//call by all client
     {
-        uIGameController = FindObjectOfType<UIGameController>();
-        turnManagement = FindObjectOfType<TurnManagement>();
-        rPCController.uIGameController = uIGameController;
-        turnManagement.rPCController = rPCController;
-        uIGameController.SettingStart();
-    }
-    public void MasterWork()
-    {
-        if (PhotonNetwork.IsMasterClient && !isWorked)
+        if (PhotonNetwork.IsMasterClient && !isWorked && !isSet)
         {
+            gameControllerCenter.generateNodeProperty.StartGenProp();
+            yield return new WaitForEndOfFrame();
             isWorked = true;
             SettingBegin();
             orderValue = orderPlayerSystem.RandomOrderAllPlayer();
@@ -35,11 +28,16 @@ public class MasterClientSettingController : MonoBehaviourPunCallbacks
 
             CreateUIOrderPlayer();
 
-            StartCoroutine(WaitSpawned());  //spawnplayer with order
-            StartCoroutine(IESetPositionStart());
+            gameControllerCenter.turnManagement.SettingStart(playersOrdered);//-----wrong
 
-            turnManagement.SettingStart(playersOrdered);
+            WaitSpawned();  //spawnplayer with order
+            yield return new WaitForEndOfFrame();
+            IESetPositionStart();
+            yield return new WaitForEndOfFrame();
 
+
+            MasterRecieveTurnRun();
+            isSet = true;
         }
     }
     private void SettingBegin()
@@ -48,34 +46,32 @@ public class MasterClientSettingController : MonoBehaviourPunCallbacks
         orderValue = new List<int>();
         orderPlayerSystem = new OrderPlayerSystem();
     }
-    IEnumerator WaitSpawned()
-    {
-        foreach (Player player in playersOrdered)
-        {
-            yield return new WaitForSeconds(0.2f);
-            Debug.Log("1-WaitSpawned-affter");
-            rPCController.SendSpawnPlayer(player.CustomProperties["playerName"].ToString());
-            Debug.Log("end-WaitSpawned-continue foreach");
-        }
-    }
 
-    IEnumerator IESetPositionStart()
+    private void WaitSpawned()
     {
-        foreach (Player player in playersOrdered)
+        for (int i = 0; i < playersOrdered.Count; i++)
         {
-            yield return new WaitForSeconds(0.2f);
-            Debug.Log("2-IESetPositionStart-affter");
-            rPCController.SetPositionStart(player.CustomProperties["playerName"].ToString());
-            Debug.Log("end-IESetPositionStart-continue foreach");
+            gameControllerCenter.rPCController.SendSpawnPlayer(playersOrdered[i].CustomProperties["playerName"].ToString());
         }
-        turnManagement.TurnRun();
+
+    }
+    private void IESetPositionStart()
+    {
+        for (int i = 0; i < playersOrdered.Count; i++)
+        {
+            gameControllerCenter.rPCController.SetPositionStart(playersOrdered[i].CustomProperties["playerName"].ToString(), i);
+        }
     }
 
     private void CreateUIOrderPlayer()
     {
         for (int i = 0; i < playersOrdered.Count; i++)
         {
-            rPCController.CreateOrderplayerTagUI(playersOrdered[i].NickName, (i + 1).ToString());
+            gameControllerCenter.rPCController.CreateOrderplayerTagUI(playersOrdered[i].NickName, (i + 1).ToString());
         }
+    }
+    public void MasterRecieveTurnRun()
+    {
+        gameControllerCenter.turnManagement.TurnRun();
     }
 }

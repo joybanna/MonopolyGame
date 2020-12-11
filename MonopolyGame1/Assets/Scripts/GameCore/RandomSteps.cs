@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomSteps : MonoBehaviour
 {
+    public GameControllerCenter gameControllerCenter;
     public int no_player;
     //public Stone[] playerStone;
     public Stone stone;

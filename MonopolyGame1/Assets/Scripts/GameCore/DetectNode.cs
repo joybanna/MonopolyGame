@@ -33,7 +33,12 @@ public class DetectNode : MonoBehaviour
                         NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
                         nodeProperties.CheckPropertiesNode(statusStone);
                     }
-                    nodeMember.Register(statusStone.stone);
+                    else
+                    {
+                        nodeMember.Register(statusStone.stone);
+                        statusStone.stone.SendNextPlayer();
+                    }
+
                 }
                 else
                 {
@@ -43,4 +48,5 @@ public class DetectNode : MonoBehaviour
             }
         }
     }
+
 }

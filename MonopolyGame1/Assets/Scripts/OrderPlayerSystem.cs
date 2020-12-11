@@ -42,7 +42,7 @@ public class OrderPlayerSystem
             player.CustomProperties["playerOrder"] = GetOrder();
             player.SetCustomProperties(player.CustomProperties);
 
-            Debug.Log("player : " + player.CustomProperties["playerName"].ToString() + " is value : " + (int)player.CustomProperties["playerOrder"]);
+            //Debug.Log("player : " + player.CustomProperties["playerName"].ToString() + " is value : " + (int)player.CustomProperties["playerOrder"]);
             orderValue.Add((int)player.CustomProperties["playerOrder"]);
         }
 

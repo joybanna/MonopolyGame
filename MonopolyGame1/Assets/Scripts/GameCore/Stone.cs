@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stone : MonoBehaviour
 {
+    public TypeCharacter typeCharacter;
     public int subNodeStay;
     public NodeMember nodeStay;
     public Route currentRoute;
@@ -17,6 +18,34 @@ public class Stone : MonoBehaviour
     {
         steps = _steps;
         StartCoroutine(Move());
+    }
+    public void MovePosition(int _position)
+    {
+        MoveByPosition(_position);
+    }
+    private void MoveByPosition(int _position)
+    {
+        Debug.Log("moveposition " + _position);
+        if (_position > currentRoute.childNodeLists.Count || _position < 0)
+        {
+            Debug.LogWarning("_position > currentRoute.childNodeLists.Count || _position < 0");
+            return;
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, currentRoute.childNodeLists[_position].position, 8f * Time.deltaTime);
+
+            if (_position + 1 < currentRoute.childNodeLists.Count)
+            {
+                transform.LookAt(LokAtPosition(currentRoute.childNodeLists[_position + 1].position));
+            }
+            else
+            {
+                transform.LookAt(LokAtPosition(currentRoute.childNodeLists[0].position));
+            }
+            detectNode.Detect(true);
+        }
+
     }
     private IEnumerator Move()
     {
@@ -69,7 +98,7 @@ public class Stone : MonoBehaviour
             steps++;
         }
 
-        if (routePosition < 0)
+        if (routePosition < 0)//Look node
         {
             transform.LookAt(LokAtPosition(currentRoute.childNodeLists[(currentRoute.childNodeLists.Count + routePosition + 1)].position));
             routePosition = currentRoute.childNodeLists.Count + routePosition;
@@ -85,7 +114,6 @@ public class Stone : MonoBehaviour
 
         isMoving = false;
         detectNode.Detect(true);//register node
-
     }
 
     public void MoveStaySubNode(Vector3 _point)
@@ -101,6 +129,10 @@ public class Stone : MonoBehaviour
     private Vector3 LokAtPosition(Vector3 _pos)
     {
         return new Vector3(_pos.x, this.transform.position.y, _pos.z);
+    }
+    public void SendNextPlayer()
+    {
+        currentRoute.gameControllerCenter.rPCController.SendTurnRunToMaster();
     }
 
 }
