@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1240cfc96f0482948a13589c40b9c8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWin: 0
   stone: {fileID: 5123261512398112870}
   stepsEffect: 0
 --- !u!114 &5123261512398112891

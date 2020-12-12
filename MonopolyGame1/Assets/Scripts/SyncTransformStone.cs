@@ -5,11 +5,11 @@ using Photon.Pun;
 using Photon.Realtime;
 
 public class SyncTransformStone : MonoBehaviourPunCallbacks
-
 {
     private PhotonView photonView_player;
     private PhotonTransformView photonTransformView;
     private Vector3 temp_trans;
+
     public void SetSyncTransformStone(PhotonView _photonView_player)
     {
         photonView_player = _photonView_player;
@@ -21,7 +21,7 @@ public class SyncTransformStone : MonoBehaviourPunCallbacks
         {
             if (!photonView_player.IsMine)
             {
-                this.transform.position = Vector3.Lerp(transform.position, temp_trans, Time.deltaTime * 2);
+                this.transform.position = Vector3.Lerp(transform.position, temp_trans, Time.deltaTime * 0.1f);
             }
         }
 

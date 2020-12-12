@@ -28,6 +28,11 @@ public class DetectNode : MonoBehaviour
 
                 if (isRegister)
                 {
+                    if (nodeMember.isFinish)
+                    {
+                        statusStone.WinGame();
+                    }
+
                     if (hit.collider.gameObject.GetComponent<NodeProperties>() != null)
                     {
                         NodeProperties nodeProperties = hit.collider.gameObject.GetComponent<NodeProperties>();
@@ -38,6 +43,7 @@ public class DetectNode : MonoBehaviour
                         nodeMember.Register(statusStone.stone);
                         statusStone.stone.SendNextPlayer();
                     }
+
 
                 }
                 else

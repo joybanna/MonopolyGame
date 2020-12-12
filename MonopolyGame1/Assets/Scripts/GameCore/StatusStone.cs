@@ -19,4 +19,9 @@ public class StatusStone : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         stone.MoveSteps(_steps);
     }
+    public void WinGame()
+    {
+        isWin = true;
+        stone.currentRoute.gameControllerCenter.turnManagement.SetPlayerWin();
+    }
 }
