@@ -48,6 +48,20 @@ public class CreateMemberTag : MonoBehaviourPunCallbacks
             }
             playerslistTag.Clear();
         }
+    }
+    public void RemoveTag(Player _player)
+    {
+        Debug.Log("RemoveTag : " + _player.NickName);
 
+        foreach (MemberTag item in playerslistTag)
+        {
+            if (item.player_network.NickName == _player.NickName)
+            {
+                playerslistTag.Remove(item);
+                Destroy(item.gameObject);
+                Debug.Log("Removed Tag");
+                break;
+            }
+        }
     }
 }

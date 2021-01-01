@@ -18,6 +18,7 @@ public class SpawnController : MonoBehaviourPunCallbacks
         GameObject playerStone = PhotonNetwork.Instantiate("stoneplayer_prefab_" + (TypeCharacter)PhotonNetwork.LocalPlayer.CustomProperties["TypeCharacter"], rPCController.route.childNodeLists[0].position, Quaternion.Euler(Vector3.zero));
         rPCController.photonView_player = playerStone.GetComponent<PhotonView>();
         rPCController.myStone = playerStone.GetComponent<Stone>();
+        rPCController.myStone.gameControllerCenter = rPCController.gameControllerCenter;
         rPCController.myStone.currentRoute = rPCController.gameControllerCenter.route;
         rPCController.myStone.typeCharacter = (TypeCharacter)PhotonNetwork.LocalPlayer.CustomProperties["TypeCharacter"];
         playerCustomProperties["isSpawned"] = true;

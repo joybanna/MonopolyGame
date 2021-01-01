@@ -11,11 +11,12 @@ public class NodeProperties : MonoBehaviour
     public int stepsEffectValue = 0;
     private MeshRenderer modelBlock;
     private Material m_blue, m_red;
+    private SoundBox soundBox;
     public void SettingStart()
     {
         m_blue = (Material)Resources.Load("m_blue");
         m_red = (Material)Resources.Load("m_red");
-
+        soundBox = FindObjectOfType<SoundBox>();
         if (GetComponentInChildren<MeshRenderer>() != null && GetComponentInChildren<MeshRenderer>().name == "model")
         {
             modelBlock = GetComponentInChildren<MeshRenderer>();
@@ -26,11 +27,13 @@ public class NodeProperties : MonoBehaviour
         if (isStepsEffect)
         {
             Debug.Log("isStepsEffect");
+            PlaySound(stepsEffectValue);
             _statusStone.stepsEffect = stepsEffectValue;
         }
         if (isContinueMove)
         {
             Debug.Log("isContinueMove");
+            PlaySound(stepsContinueMove);
             _statusStone.MoveStone(stepsContinueMove);
         }
         else
@@ -52,6 +55,17 @@ public class NodeProperties : MonoBehaviour
         }
 
 
+    }
+    private void PlaySound(int _value)
+    {
+        if (_value > 0)
+        {
+            soundBox.PalySoundEffect("forward");
+        }
+        else
+        {
+            soundBox.PalySoundEffect("backward");
+        }
     }
 
 }

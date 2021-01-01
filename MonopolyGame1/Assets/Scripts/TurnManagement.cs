@@ -63,6 +63,7 @@ public class TurnManagement : MonoBehaviourPunCallbacks
         else
         {
             Debug.Log("ENG Game");
+            gameControllerCenter.uIGameController.uIWinPanel.OpenWinPanel(NamePlayerWin());
         }
 
 
@@ -94,11 +95,38 @@ public class TurnManagement : MonoBehaviourPunCallbacks
         }
         return temp_playerWin;
     }
-
+    private string NamePlayerWin()//--creating
+    {
+        for (int i = 0; i < playersOrdered.Count; i++)
+        {
+            if ((bool)PhotonNetwork.PlayerList[i].CustomProperties["isWin"])
+            {
+                for (int j = 0; j < playersOrdered.Count; j++)
+                {
+                    if (PhotonNetwork.PlayerList[i].NickName == playersOrdered[j].NickName)
+                    {
+                        return playersOrdered[j].NickName;
+                    }
+                }
+            }
+        }
+        return "";
+    }
     public void SetPlayerWin()
     {
         Debug.Log("SetPlayerWin");
         PhotonNetwork.LocalPlayer.CustomProperties["isWin"] = true;
         PhotonNetwork.LocalPlayer.SetCustomProperties(PhotonNetwork.LocalPlayer.CustomProperties);
+    }
+    private void CreateNewPlayerOrder()
+    {
+        foreach (Player player in PhotonNetwork.PlayerList)
+        {
+
+        }
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+        {
+
+        }
     }
 }

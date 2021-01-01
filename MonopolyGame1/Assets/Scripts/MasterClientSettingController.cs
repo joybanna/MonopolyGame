@@ -28,7 +28,7 @@ public class MasterClientSettingController : MonoBehaviourPunCallbacks
 
             CreateUIOrderPlayer();
 
-            gameControllerCenter.turnManagement.SettingStart(playersOrdered);//-----wrong
+            gameControllerCenter.turnManagement.SettingStart(playersOrdered);
 
             WaitSpawned();  //spawnplayer with order
             yield return new WaitForEndOfFrame();

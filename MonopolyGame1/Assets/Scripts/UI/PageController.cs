@@ -11,6 +11,7 @@ public class PageController : MonoBehaviourPunCallbacks
     public Button play_btn;
     public Text status_text;
     private List<GameObject> listCanvas;
+    public CharacterSelect characterSelect;
 
     private void Start()
     {
@@ -32,18 +33,17 @@ public class PageController : MonoBehaviourPunCallbacks
             }
         }
     }
-    private void Onclick_play()
+    public void Onclick_play()
     {
+        characterSelect.OnEnableScript(false);
+        FindObjectOfType<UISoundBox>().PalySoundEffect("click");
         PhotonNetwork.ConnectUsingSettings();
+        SetCanvas(lobby_canvas);
     }
     public override void OnConnectedToMaster()
     {
-
         PhotonNetwork.JoinLobby();
-    }
-    public override void OnJoinedLobby()
-    {
-        SetCanvas(lobby_canvas);
+
     }
     private void Update()
     {

@@ -6,12 +6,11 @@ public class DataPlayer
 {
     public string PlayerName;
     public TypeCharacter playerType;
-    public int playerNo;
-    public DataPlayer(string _PlayerName, TypeCharacter _playerType, int _playerNo)
+
+    public DataPlayer(string _PlayerName, TypeCharacter _playerType)
     {
         PlayerName = _PlayerName;
         playerType = _playerType;
-        playerNo = _playerNo;
     }
 
 }

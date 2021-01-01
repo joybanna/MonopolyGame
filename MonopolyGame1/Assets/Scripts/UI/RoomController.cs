@@ -24,15 +24,13 @@ public class RoomController : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.InRoom)
         {
-            roomname_text.text = PhotonNetwork.CurrentRoom.Name;
-
             if (currentMember != PhotonNetwork.PlayerList.Length)
             {
-                // Debug.Log("PhotonNetwork.PlayerList.Length : " + PhotonNetwork.PlayerList.Length);
                 currentMember = PhotonNetwork.PlayerList.Length;
                 createMember.ClearTag();
                 CheckMember();
             }
+
 
             if (PhotonNetwork.IsMasterClient)
             {
@@ -46,21 +44,41 @@ public class RoomController : MonoBehaviourPunCallbacks
     }
     private void CheckMember()
     {
+        //Debug.Log("CheckMember " + currentMember + " ? " + PhotonNetwork.PlayerList.Length);
+
         foreach (Player playerInRoom in PhotonNetwork.PlayerList)
         {
             createMember.CreatTag(playerInRoom);
         }
+
     }
     private void Onclick_back()
     {
+        FindObjectOfType<UISoundBox>().PalySoundEffect("click");
         PhotonNetwork.LeaveRoom();
-        pageController.SetCanvas(pageController.lobby_canvas);
     }
     private void Onclick_play()
     {
-
         Debug.Log("play");
+        FindObjectOfType<UISoundBox>().PalySoundEffect("click");
         PhotonNetwork.LoadLevel(1);
+    }
+    public override void OnJoinedRoom()
+    {
+        //this.enabled = true;
+        roomname_text.text = PhotonNetwork.CurrentRoom.Name;
+        //Debug.Log("romm member PC|CP : " + PhotonNetwork.CurrentRoom.PlayerCount + " | " + createMember.playerslistTag.Count);
+        //CheckMember();
+    }
+    public override void OnLeftRoom()
+    {
+        Debug.Log("OnLeftRoom");
+        currentMember--;
+        createMember.RemoveTag(PhotonNetwork.LocalPlayer);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(new ExitGames.Client.Photon.Hashtable());
+        pageController.SetCanvas(pageController.lobby_canvas);
+        PhotonNetwork.JoinLobby();
+        base.OnLeftRoom();
     }
 
 }

@@ -12,6 +12,7 @@ public class UIGameController : MonoBehaviourPunCallbacks
     public PlayerOrderTag playerOrderTag_prefab;
     public List<PlayerOrderTag> playerOrderTagList;
     public UITestGameCore uITestGameCore;
+    public UIWinPanel uIWinPanel;
 
     public void SettingStart()
     {

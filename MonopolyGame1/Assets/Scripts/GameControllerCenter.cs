@@ -13,6 +13,7 @@ public class GameControllerCenter : MonoBehaviour
     [HideInInspector] public CheckReady checkReady;
     [HideInInspector] public RandomSteps randomSteps;
     [HideInInspector] public GenerateNodeProperty generateNodeProperty;
+    [HideInInspector] public SoundBox soundBox;
     private void Start()
     {
         SettingAllScripts();
@@ -46,5 +47,8 @@ public class GameControllerCenter : MonoBehaviour
 
         generateNodeProperty = FindObjectOfType<GenerateNodeProperty>();
         generateNodeProperty.gameControllerCenter = this;
+
+        soundBox = FindObjectOfType<SoundBox>();
+        soundBox.gameControllerCenter = this;
     }
 }
