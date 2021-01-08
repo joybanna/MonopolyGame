@@ -7,11 +7,21 @@ public class StatusStone : MonoBehaviour
     public bool isWin;
     public Stone stone;
     public int stepsEffect;
+    public bool isResistance;
 
+    private void Start()
+    {
+        isResistance = false;
+    }
     public void MoveStone(int _steps)
     {
-        Debug.Log("StatusStone-MoveStone : " + _steps);
-        StartCoroutine(DelayMove(_steps));
+        if (!isResistance)
+        {
+            Debug.Log("StatusStone-MoveStone : " + _steps);
+            StartCoroutine(DelayMove(_steps));
+            isResistance = true;
+        }
+
     }
 
     IEnumerator DelayMove(int _steps)
