@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class RandomSteps : MonoBehaviour
 {
-    public GameControllerCenter gameControllerCenter;
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     public int no_player;
     public Stone stone;
     public int stepsRandom;
 
     public void MoveStone()
     {
+        if (gameControllerCenter == null)
+        {
+            gameControllerCenter = FindObjectOfType<GameControllerCenter>();
+        }
         stone.GetComponent<StatusStone>().isResistance = false;
         stone.MoveSteps(stepsRandom);
     }

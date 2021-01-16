@@ -11,13 +11,14 @@ public class PageController : MonoBehaviourPunCallbacks
     public Button play_btn;
     public Text status_text;
     private List<GameObject> listCanvas;
-    public CharacterSelect characterSelect;
+    [HideInInspector] public CharacterSelect characterSelect;
 
     private void Start()
     {
         listCanvas = new List<GameObject>() { home_canvas, lobby_canvas, room_canvas };
         SetCanvas(home_canvas);
         play_btn.onClick.AddListener(() => Onclick_play());
+        characterSelect = FindObjectOfType<CharacterSelect>();
     }
     public void SetCanvas(GameObject _activeCanvas)
     {

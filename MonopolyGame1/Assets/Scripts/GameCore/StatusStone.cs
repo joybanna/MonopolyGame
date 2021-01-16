@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Stone))]
 public class StatusStone : MonoBehaviour
 {
     public bool isWin;
-    public Stone stone;
+    [HideInInspector] public Stone stone;
     public int stepsEffect;
     public bool isResistance;
 
     private void Start()
     {
         isResistance = false;
+        stone = GetComponent<Stone>();
     }
     public void MoveStone(int _steps)
     {
@@ -21,7 +23,6 @@ public class StatusStone : MonoBehaviour
             StartCoroutine(DelayMove(_steps));
             isResistance = true;
         }
-
     }
 
     IEnumerator DelayMove(int _steps)

@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 269315257}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aaceacd50e5809459366ea3ffe4fcee, type: 3}
+  m_Script: {fileID: 11500000, guid: d4da5a3f05b8da24a8bc95452c1dfd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerwin_text: {fileID: 376690758}
@@ -2598,7 +2598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a346eb216e3b14f947f5078da9c94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameControllerCenter: {fileID: 0}
+  gameControllerCenter: {fileID: 3911612861559772933}
   childNodeLists:
   - {fileID: 2023168251}
   - {fileID: 898950554}
@@ -7712,9 +7712,9 @@ GameObject:
   - component: {fileID: 3911612861559772932}
   - component: {fileID: 3911612861559772934}
   - component: {fileID: 3911612861559772935}
-  - component: {fileID: 3911612861559772936}
   - component: {fileID: 3911612861559772938}
   - component: {fileID: 3911612861559772937}
+  - component: {fileID: 3911612861559772936}
   m_Layer: 0
   m_Name: RandomSteps
   m_TagString: Untagged
@@ -7881,14 +7881,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3911612861559772925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09184b33bbd6c8a4098f9d976a54bca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 74169c170c307eb42a1c97b593d888df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameControllerCenter: {fileID: 0}
-  move: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
-  roll: {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
-  forward: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
-  backward: {fileID: 8300000, guid: 657578e4be6b64dbf9b09deada272e55, type: 3}
+  move: {fileID: 8300000, guid: f6d0c43edca8b81438bf06b864a70f55, type: 3}
+  roll: {fileID: 8300000, guid: 75feebfcf7ad1334f9840246f85a6b6a, type: 3}
+  forward: {fileID: 8300000, guid: 9c6831a2d0082b7458c3a1fb50a27b2e, type: 3}
+  backward: {fileID: 8300000, guid: 3ff266041930ebe45ae27171ae6f9cfa, type: 3}
   audioSource_Ef: {fileID: 3911612861559772938}
   audioSource_Bg: {fileID: 3911612861559772937}
 --- !u!82 &3911612861559772937
@@ -7900,9 +7900,9 @@ AudioSource:
   m_GameObject: {fileID: 3911612861559772925}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243870304663553010, guid: bbc504ed3c5c1e6448338cc9bc73005e,
+  OutputAudioMixerGroup: {fileID: 243870304663553010, guid: 9da280c79dcdc944bb5d3c06cace81db,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 02bc46b5128b6d644be60d91db059cd7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b8e1f60ff6081c843b5fd227cee25cf6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -7997,7 +7997,7 @@ AudioSource:
   m_GameObject: {fileID: 3911612861559772925}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243784332078698484, guid: bbc504ed3c5c1e6448338cc9bc73005e,
+  OutputAudioMixerGroup: {fileID: 243784332078698484, guid: 9da280c79dcdc944bb5d3c06cace81db,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

@@ -24,22 +24,26 @@ public class NodeProperties : MonoBehaviour
     }
     public void CheckPropertiesNode(StatusStone _statusStone)
     {
-        if (isStepsEffect)
+        if (!_statusStone.isResistance)
         {
-            Debug.Log("isStepsEffect");
-            PlaySound(stepsEffectValue);
-            _statusStone.stepsEffect = stepsEffectValue;
+            if (isStepsEffect)
+            {
+                Debug.Log("isStepsEffect");
+                PlaySound(stepsEffectValue);
+                _statusStone.stepsEffect = stepsEffectValue;
+            }
+            if (isContinueMove)
+            {
+                Debug.Log("isContinueMove");
+                PlaySound(stepsContinueMove);
+                _statusStone.MoveStone(stepsContinueMove);
+            }
+            else
+            {
+                return;
+            }
         }
-        if (isContinueMove)
-        {
-            Debug.Log("isContinueMove");
-            PlaySound(stepsContinueMove);
-            _statusStone.MoveStone(stepsContinueMove);
-        }
-        else
-        {
-            return;
-        }
+
     }
     public void ChangeColorBlock(string _color)
     {

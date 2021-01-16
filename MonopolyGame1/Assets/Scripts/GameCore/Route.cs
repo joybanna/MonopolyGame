@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Route : MonoBehaviour
 {
-    public GameControllerCenter gameControllerCenter;
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     private Transform[] childObjects;
     public List<Transform> childNodeLists = new List<Transform>();
     public List<NodeMember> nodeMemberList = new List<NodeMember>();
@@ -32,6 +32,7 @@ public class Route : MonoBehaviour
         childNodeLists.Clear();
         nodeMemberList.Clear();
         childObjects = GetComponentsInChildren<Transform>();
+        gameControllerCenter = FindObjectOfType<GameControllerCenter>();
         for (int i = 0; i < childObjects.Length; i++)
         {
             if (childObjects[i] != this.transform)

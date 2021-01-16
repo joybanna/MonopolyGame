@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc88d1e5eedf8714ea8952bbf5a5a3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameControllerCenter: {fileID: 0}
   typeCharacter: 0
   subNodeStay: 0
   nodeStay: {fileID: 0}
@@ -273,6 +274,7 @@ MonoBehaviour:
   isWin: 0
   stone: {fileID: 7301699541016476255}
   stepsEffect: 0
+  isResistance: 0
 --- !u!114 &7301699541016476226
 MonoBehaviour:
   m_ObjectHideFlags: 0

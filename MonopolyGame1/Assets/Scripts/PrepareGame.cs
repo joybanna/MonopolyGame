@@ -10,9 +10,10 @@ public class PrepareGame : MonoBehaviour
     //generate option map ---
     //start trunmanagement
     //check All ready
-    public GameControllerCenter gameControllerCenter;
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     public IEnumerator SettingStart()
     {
+        gameControllerCenter = FindObjectOfType<GameControllerCenter>();
         gameControllerCenter.route.SettingRoute();
         yield return new WaitForEndOfFrame();
         gameControllerCenter.checkReady.SettingStart();

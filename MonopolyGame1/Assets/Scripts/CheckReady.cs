@@ -6,11 +6,12 @@ using Photon.Realtime;
 
 public class CheckReady : MonoBehaviourPunCallbacks
 {
-    public GameControllerCenter gameControllerCenter;
+    [HideInInspector] public GameControllerCenter gameControllerCenter;
     private RPCController rPCController;
 
     public void SettingStart()//start
     {
+        gameControllerCenter = FindObjectOfType<GameControllerCenter>();
         this.enabled = false;
         PhotonNetwork.AutomaticallySyncScene = true;
         rPCController = gameControllerCenter.rPCController;

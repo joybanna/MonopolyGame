@@ -3851,10 +3851,10 @@ GameObject:
   - component: {fileID: 1320916877}
   - component: {fileID: 1320916876}
   - component: {fileID: 1320916875}
-  - component: {fileID: 1320916879}
-  - component: {fileID: 1320916881}
   - component: {fileID: 1320916880}
   - component: {fileID: 1320916882}
+  - component: {fileID: 1320916879}
+  - component: {fileID: 1320916881}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4027,12 +4027,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320916870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3c28ce9e69dfd9459ba533b6db54e00, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cdf1a703e1c4464a9eca1e72b306c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pageController: {fileID: 1320916878}
   selectCharacters:
-  - {fileID: 1965410030371650}
+  - {fileID: 1965410030371652}
   - {fileID: 1849735116162659}
   - {fileID: 1283017510354688}
   typeCharacter: 0
@@ -4046,7 +4046,7 @@ AudioSource:
   m_GameObject: {fileID: 1320916870}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243784332078698484, guid: bbc504ed3c5c1e6448338cc9bc73005e,
+  OutputAudioMixerGroup: {fileID: 243784332078698484, guid: 9da280c79dcdc944bb5d3c06cace81db,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -4143,12 +4143,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320916870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bed87ebb2e59aa4d849abc91e9a64f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 48147589c926adc478190a3e4e13be41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  click: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
-  conneted: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
-  disconneted: {fileID: 8300000, guid: df729d213c4be44a9b55cd109f5cd4f9, type: 3}
+  click: {fileID: 8300000, guid: 6f946790dd45c4d4bb7c98394ede382a, type: 3}
+  conneted: {fileID: 8300000, guid: 846183722fe99a14882eb50ea4831a0f, type: 3}
+  disconneted: {fileID: 8300000, guid: dc5aecfb765211542888cf33ec9c5bd2, type: 3}
   audioSource_Ef: {fileID: 1320916880}
   audioSource_Bg: {fileID: 1320916882}
 --- !u!82 &1320916882
@@ -4160,9 +4160,9 @@ AudioSource:
   m_GameObject: {fileID: 1320916870}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243870304663553010, guid: bbc504ed3c5c1e6448338cc9bc73005e,
+  OutputAudioMixerGroup: {fileID: 243870304663553010, guid: 9da280c79dcdc944bb5d3c06cace81db,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 61c53a7127a90fc429b5550218e8b3aa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06b44ba150b9d6143bdcc8e264d0f132, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -6325,8 +6325,8 @@ GameObject:
   - component: {fileID: 4058868307359815}
   - component: {fileID: 33718461821357923}
   - component: {fileID: 23759754780644951}
-  - component: {fileID: 1283017510354688}
   - component: {fileID: 1283017510354689}
+  - component: {fileID: 1283017510354688}
   m_Layer: 0
   m_Name: SM_Bean_Cop_01
   m_TagString: Untagged
@@ -6343,7 +6343,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283017510354687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51f1b0c0606547b4d833499148d5ae95, type: 3}
+  m_Script: {fileID: 11500000, guid: ab0c81a5b1ce11347a8a9d02f0ea46cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelect: {fileID: 1320916879}
@@ -6374,8 +6374,8 @@ GameObject:
   - component: {fileID: 4283526414364996}
   - component: {fileID: 33781035306580960}
   - component: {fileID: 23203112970760292}
-  - component: {fileID: 1849735116162659}
   - component: {fileID: 1849735116162660}
+  - component: {fileID: 1849735116162659}
   m_Layer: 0
   m_Name: SM_Bean_Cowboy_01
   m_TagString: Untagged
@@ -6392,7 +6392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849735116162658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51f1b0c0606547b4d833499148d5ae95, type: 3}
+  m_Script: {fileID: 11500000, guid: ab0c81a5b1ce11347a8a9d02f0ea46cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelect: {fileID: 1320916879}
@@ -6423,8 +6423,8 @@ GameObject:
   - component: {fileID: 4932142617606383}
   - component: {fileID: 33368782048532045}
   - component: {fileID: 23359314546446453}
-  - component: {fileID: 1965410030371650}
   - component: {fileID: 1965410030371651}
+  - component: {fileID: 1965410030371652}
   m_Layer: 0
   m_Name: SM_Bean_Female_01
   m_TagString: Untagged
@@ -6432,21 +6432,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1965410030371650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1965410030371649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51f1b0c0606547b4d833499148d5ae95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterSelect: {fileID: 1320916879}
-  arrow: {fileID: 2051733386}
-  typeCharacter: 0
 --- !u!136 &1965410030371651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6461,6 +6446,21 @@ CapsuleCollider:
   m_Height: 1.7245162
   m_Direction: 1
   m_Center: {x: -0.00008055567, y: 0.86424947, z: 0.003252968}
+--- !u!114 &1965410030371652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965410030371649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0c81a5b1ce11347a8a9d02f0ea46cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterSelect: {fileID: 1320916879}
+  arrow: {fileID: 2051733386}
+  typeCharacter: 0
 --- !u!4 &4058868307359815
 Transform:
   m_ObjectHideFlags: 0
