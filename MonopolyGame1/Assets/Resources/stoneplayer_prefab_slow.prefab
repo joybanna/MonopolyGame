@@ -274,6 +274,7 @@ MonoBehaviour:
   isWin: 0
   stone: {fileID: 7825774288835727769}
   stepsEffect: 0
+  isResistance: 0
 --- !u!114 &7825774288835727748
 MonoBehaviour:
   m_ObjectHideFlags: 0
